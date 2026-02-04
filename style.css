@@ -209,3 +209,18 @@ body {
     opacity: 0;
   }
 }
+/* ---------- FINAL MESSAGE FONT ONLY ---------- */
+#banner {
+  font-family: "Playfair Display", serif;
+}
+
+#banner h2 {
+  font-size: 32px;
+  letter-spacing: 1px;
+}
+
+#banner p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
