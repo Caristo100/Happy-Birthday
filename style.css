@@ -1,0 +1,211 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #dff6ff, #fef9c3, #e6fffa);
+  overflow-x: hidden;
+  color: #2f3e46;
+  text-align: center;
+}
+
+.hidden { display: none; }
+
+/* ---------- CONFETTI ---------- */
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  top: -10px;
+  animation: fall linear infinite;
+}
+@keyframes fall {
+  to { transform: translateY(110vh) rotate(360deg); }
+}
+
+/* ---------- BUBBLES ---------- */
+.bubble {
+  position: fixed;
+  bottom: -60px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  animation: floatUp linear infinite;
+}
+@keyframes floatUp {
+  to { transform: translateY(-120vh); opacity: 0; }
+}
+
+/* ---------- CARDS ---------- */
+.card {
+  background: white;
+  width: 90%;
+  max-width: 420px;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* ---------- OPTION BUTTONS ---------- */
+.option-btn {
+  position: relative;
+  margin: 12px;
+  padding: 14px 32px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+
+  color: #1f2937;
+  background: linear-gradient(135deg, #ffffff, #f1f5f9);
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.12),
+    inset 0 0 0 2px rgba(0,0,0,0.05);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.option-btn:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  box-shadow:
+    0 14px 30px rgba(0,0,0,0.18),
+    inset 0 0 0 2px rgba(245,158,11,0.35);
+}
+
+.option-btn:active {
+  transform: translateY(0);
+  box-shadow:
+    0 6px 14px rgba(0,0,0,0.15),
+    inset 0 3px 6px rgba(0,0,0,0.15);
+}
+
+/* ---------- STAGE ---------- */
+#celebration {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#stage {
+  position: relative;
+  width: 320px;
+  height: 300px;
+}
+
+/* ---------- GIFT ---------- */
+#gift-box {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #facc15, #fb923c);
+  border-radius: 14px;
+  margin: auto;
+  position: relative;
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  50% { transform: scale(1.05); }
+}
+
+.ribbon {
+  position: absolute;
+  background: #dc2626;
+}
+.ribbon.vertical {
+  width: 18px;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.ribbon.horizontal {
+  height: 18px;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.bow {
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  background: #dc2626;
+  border-radius: 50%;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ---------- PIECES ---------- */
+.piece {
+  position: absolute;
+  opacity: 0;
+  animation: fly 3.5s ease-in-out forwards;
+}
+@keyframes fly {
+  from {
+    transform: translate(var(--fx), var(--fy)) scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0,0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* ---------- CAKE ---------- */
+.cake-layer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px;
+}
+
+.layer1 { width: 200px; height: 40px; background: #fde68a; top: 190px; }
+.layer2 { width: 160px; height: 35px; background: #fdba74; top: 150px; }
+.layer3 { width: 120px; height: 30px; background: #fca5a5; top: 115px; }
+
+.candle {
+  position: absolute;
+  width: 10px;
+  height: 30px;
+  background: #60a5fa;
+  left: 50%;
+  top: 80px;
+  transform: translateX(-50%);
+  border-radius: 4px;
+}
+.flame {
+  position: absolute;
+  width: 12px;
+  height: 16px;
+  background: radial-gradient(circle, #fde047, #f97316);
+  top: -14px;
+  left: -1px;
+  border-radius: 50%;
+  animation: flicker 0.8s infinite alternate;
+}
+@keyframes flicker {
+  from { transform: scale(1); }
+  to { transform: scale(1.2); }
+}
+
+/* ---------- FIREWORKS ---------- */
+.firework {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  animation: explode 1.6s ease-out forwards;
+}
+@keyframes explode {
+  to {
+    transform: translate(var(--dx), var(--dy)) scale(0.3);
+    opacity: 0;
+  }
+}
